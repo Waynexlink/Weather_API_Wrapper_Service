@@ -14,8 +14,6 @@ exports.getWeatherdata = async (req, res) => {
     await setWeatherCache(city, response.data, 5000);
     return res.json({ source: "API", data: response.data });
   } catch (error) {
-    res.status(500).json({
-      error: "failed to fetch weather data ",
-    });
+    next(error);
   }
 };

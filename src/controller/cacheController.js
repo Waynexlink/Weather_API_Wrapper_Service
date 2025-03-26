@@ -10,6 +10,7 @@ const getWeatherCache = async (key) => {
     return data ? JSON.parse(data) : null;
   } catch (error) {
     console.log("error fetching data from redis", err.message);
+    throw error;
   }
 };
 const setWeatherCache = async (key, value, expInSec) => {
@@ -17,6 +18,7 @@ const setWeatherCache = async (key, value, expInSec) => {
     await redisClient.set(key, JSON.stringify(value), "EX", expInSec);
   } catch (error) {
     console.log("Redis SET error", error);
+    throw error;
   }
 };
 
