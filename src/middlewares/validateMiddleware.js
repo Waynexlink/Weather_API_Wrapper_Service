@@ -1,5 +1,3 @@
-const expressValidator = require("express-validator");
-
 const { param, validationResult } = require("express-validator");
 
 const validateCity = [
@@ -17,4 +15,4 @@ const validateCity = [
   },
 ];
 
-module.exports = validator;
+module.exports = validateCity;

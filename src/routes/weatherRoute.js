@@ -1,6 +1,6 @@
 const express = require("express");
 const { getWeatherdata } = require("../controller/weatherController");
-const validatorMiddleware = require("./src/middlewares/validateMiddleware");
+const validatorMiddleware = require("../middlewares/validateMiddleware");
 const Router = express.Router();
 
 Router.get("/:city", validatorMiddleware, getWeatherdata);
